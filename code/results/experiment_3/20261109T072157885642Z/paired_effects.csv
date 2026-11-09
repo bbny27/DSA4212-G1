@@ -1,0 +1,13 @@
+state,target,control,treatment,pairs,gains,losses,change_pp,low_pp,high_pp
+Near A,Discover B,Ordinary BO-EI,BO-EI + uniform probes,50,15,0,30.0,8.08457277135943,46.61284405657043
+Near A,Discover B,CMA-ES small scale,CMA-ES default scale,50,5,0,10.0,-5.608905745452163,23.603480333876643
+Near A,Discover B,CMA-ES default scale,Ordinary BO-EI,50,1,5,-8.0,-23.5783259337128,9.314206219189971
+Near A,Refine A,Ordinary BO-EI,BO-EI + uniform probes,50,0,2,-4.0,-15.280991000923876,8.053951513891908
+Near A,Refine A,CMA-ES small scale,CMA-ES default scale,50,0,39,-78.0,-89.58522910207367,-53.668483437500406
+Near A,Refine A,CMA-ES default scale,Ordinary BO-EI,50,43,0,86.0,62.98957810650202,94.94198952243168
+Near A,Reach precision,Ordinary BO-EI,BO-EI + uniform probes,50,5,0,10.0,-5.608905745452163,23.603480333876643
+Near A,Reach precision,CMA-ES small scale,CMA-ES default scale,50,0,0,0.0,-8.390987800799044,8.390987800799044
+Near A,Reach precision,CMA-ES default scale,Ordinary BO-EI,50,0,0,0.0,-8.390987800799044,8.390987800799044
+Near B,Reach precision,Ordinary BO-EI,BO-EI + uniform probes,50,2,8,-12.0,-30.68897359667058,8.968596917922564
+Near B,Reach precision,CMA-ES small scale,CMA-ES default scale,50,0,42,-84.0,-93.68760591699868,-60.58300231562325
+Near B,Reach precision,CMA-ES default scale,Ordinary BO-EI,50,38,0,76.0,51.44828633696035,88.1255826167507
