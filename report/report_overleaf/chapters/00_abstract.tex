@@ -1,0 +1,10 @@
+\begin{center}\textbf{Abstract}\end{center}
+\noindent
+Multimodal black-box optimisation under a limited evaluation budget requires both discovering a promising region and refining a solution within it. We investigate how global coverage and local sampling concentration contribute to these two tasks. We construct a deterministic two-dimensional function with two basins, varying an outer penalty around the global minimiser to change how ‘difficult’ it is to enter the better basin. Using a primary budget of 50 objective evaluations, we compare Bayesian optimisation with expected improvement (BO-EI), single-region trust-region Bayesian optimisation (TuRBO-1), covariance matrix adaptation evolution strategy (CMA-ES), and uniform random search. Baseline results suggest distinct performance bottlenecks: the BO variants frequently fail to discover the better region on higher-penalty instances, whereas default CMA-ES discovers it more often without a corresponding increase in precision attainment. Experiments show that replacing ten EI evaluations with uniform probes increases discovery among BO-EI runs that remain unsuccessful after a given out number of evaluations. Faster trust-region contraction in TuRBO-1 is also associated with more restarts and discoveries. When CMA-ES was initialised near the global minimiser, the smaller
+population tended to concentrate around it sooner, and selecting
+fewer parents improved precision at the cost of fewer discoveries.
+Halving the mean update improved both discovery and precision.
+In a separate experiment, reducing the initial step size improved
+precision when the search started near the global minimiser and
+favoured refinement around the inferior minimiser when the search
+started near it. These findings show that the benefits of global exploration and local concentration depend on the information available and the location of the search, providing an empirical explanation for contrasting discovery and refinement behaviour on this benchmark.

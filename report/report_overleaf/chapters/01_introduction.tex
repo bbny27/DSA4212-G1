@@ -1,0 +1,9 @@
+\section{Introduction}\label{sec:intro}
+Under a finite evaluation budget, a black-box optimiser can improve an incumbent locally while leaving a better region unexplored. In multimodal objectives, this makes the ability to discover a promising region distinct from the ability to refine a solution within it. We examine these two aspects of performance for Bayesian optimisation (BO) and evolutionary strategies.
+
+Global BO with expected improvement (BO-EI) selects evaluations using an acquisition function derived from a Gaussian process (GP) posterior \cite{frazier}. TuRBO-1 fits a local GP and restricts candidate generation to an adaptive trust region \cite{eriksson}. CMA-ES uses ranked objective evaluations to adapt the mean, covariance matrix and step size of a Gaussian search distribution \cite{hansen}. Independent uniform sampling provides a baseline for global coverage.
+
+We test two hypotheses. First, after an early miss, the evaluated points of BO-EI and TuRBO-1 concentrate near the inferior minimiser. Forcing global evaluations in BO-EI or accelerating trust-region contraction in TuRBO-1 should therefore improve discovery when the available budget allows renewed exploration. Second, a CMA-ES population may contain a point below the discovery threshold while its search distribution remains too dispersed for rapid refinement. We examine how population size, parent count, and mean updates affect
+settling, discovery, and precision. With the same initial mean near
+the global minimiser, we expect a smaller initial step size to
+improve precision attainment.  We design experiments, as seen in Sections 4 and 5, to assess these hypotheses.

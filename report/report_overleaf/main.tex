@@ -1,0 +1,95 @@
+\documentclass[10pt,a4paper,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=23mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,booktabs,tabularx,caption}
+\usepackage{xcolor,fancyhdr}
+\usepackage[colorlinks=true,allcolors=reportblue]{hyperref}
+\usepackage{subcaption}
+
+\definecolor{reportblue}{HTML}{174B72}
+\hypersetup{pdftitle={Discovery and Refinement in Multimodal Black-Box Optimisation},
+  pdfauthor={Kwan Li Hao, Beckham Wee Kai Le, Brian Bong Neng Ye }}
+\graphicspath{{figures/}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{secnumdepth}{2}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\emergencystretch}{2em}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{13pt plus 3pt minus 2pt}
+\setlength{\intextsep}{11pt plus 3pt minus 2pt}
+\renewcommand{\topfraction}{.8}
+\renewcommand{\textfraction}{.12}
+\linespread{1.02}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small DSA4212 Group 1}
+\fancyhead[R]{\small Multimodal black-box optimisation}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\raggedbottom
+\newcommand{\R}{\mathbb R}
+\newcommand{\EI}{\operatorname{EI}}
+\newcommand{\sd}{\sigma_0}
+\newcommand{\repotree}{https://github.com/bbny27/DSA4212-G1/tree/e2863a9c4a7d237938771be24634e8711d109616}
+
+\begin{document}
+\thispagestyle{plain}
+\noindent National University of Singapore \hfill DSA4212 \par
+\noindent Final Project Report \hfill Group 1\par
+\vspace{1.1em}
+\begin{center}
+{\LARGE\bfseries Discovery and Refinement in\\[0.2em]
+Multimodal Black-Box Optimisation\par}
+\vspace{0.55em}
+\vspace{0.8em}
+Kwan Li Hao (A0276228X)\quad Beckham Wee Kai Le (A0276203L)\quad Brian Bong Neng Ye (A0276127B)
+\par\smallskip
+\href{https://github.com/bbny27/DSA4212-G1}{GitHub repository}
+\par
+\end{center}
+\vspace{0.4em}
+
+\input{chapters/00_abstract}
+\input{chapters/01_introduction}
+\input{chapters/02_problem_design}
+\input{chapters/03_experiment_1}
+\input{chapters/04_experiment_2}
+\input{chapters/04b_experiment_3}
+\input{chapters/05_discussions}
+\input{chapters/06_conclusion}
+% Beckham
+
+\begingroup
+\small
+\RenewDocumentCommand{\chapter}{s o m}{\section*{#3}}
+\renewcommand{\bibname}{References}
+\begin{thebibliography}{9}\setlength{\itemsep}{2pt}
+\bibitem{frazier}
+P.~I. Frazier. A tutorial on Bayesian optimization.
+\emph{arXiv:1807.02811}, 2018.
+\href{https://arxiv.org/abs/1807.02811}{arXiv}.
+\bibitem{eriksson}
+D. Eriksson, M. Pearce, J.~R. Gardner, R.~D. Turner, and M. Poloczek.
+Scalable global optimization via local Bayesian optimization.
+\emph{Advances in Neural Information Processing Systems}, 32, 2019.
+\href{https://arxiv.org/abs/1910.01739}{arXiv}.
+\bibitem{hansen}
+N. Hansen. The CMA evolution strategy: A tutorial.
+\emph{arXiv:1604.00772}, 2016, revised 2023.
+\href{https://arxiv.org/abs/1604.00772}{arXiv}.
+\bibitem{coco}
+N. Hansen, A. Auger, R. Ros, O. Mersmann, T. Tušar, and D. Brockhoff.
+COCO: A platform for comparing continuous optimizers in a black-box setting.
+\emph{Optimization Methods and Software}, 36(1), 114--144, 2021.
+\href{https://doi.org/10.1080/10556788.2020.1808977}{DOI}.
+\bibitem{repo}
+DSA4212 Group 1 Implementation.
+\href{\repotree}{GitHub repository}.
+\end{thebibliography}
+\endgroup
+\end{document}

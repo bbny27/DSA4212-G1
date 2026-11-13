@@ -1,0 +1,21 @@
+TuRBO-1 uses Thompson sampling from a local GP posterior within a trust region centred on the current incumbent. It halves the region's length after a specified number of consecutive unsuccessful iterations and restarts below a minimum length. We vary the normalised initial length \(L_0\) or the failure tolerance \(k_{\rm fail}\). The six variants share four initial design points within each seed. The intervention begins at the first model-guided proposal, and all 50 seeds per penalty enter the comparison.
+
+\begin{table}[!htbp]
+ \centering
+ \caption{TuRBO-1 outcomes after 50 evaluations. Each cell reports discovery count / precision count / count of runs with at least one restart, out of 50 runs.}
+ \label{tab:turbo}
+ \begin{tabular}{lcccc}
+ \toprule
+ Variant & \(L_0\) & \(k_{\rm fail}\) & \(c=10\) & \(c=30\)\\
+ \midrule
+ Default               & 0.8 & 4  & \(12/9/30\)  & \(5/4/29\)\\
+ Small region          & 0.4 & 4  & \(20/10/45\) & \(11/5/41\)\\
+ Large region          & 1.6 & 4  & \(12/10/26\) & \(6/5/24\)\\
+ Fast contraction      & 0.8 & 2  & \(19/13/50\) & \(14/9/50\)\\
+ Slow contraction      & 0.8 & 8  & \(10/9/0\)   & \(4/3/0\)\\
+ Very slow contraction & 0.8 & 12 & \(11/9/0\)   & \(4/3/0\)\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+A smaller initial region and faster contraction both increase the observed counts of restarts and discoveries (Table~\ref{tab:turbo}). At \(c=30\), the fast-contraction variant yields ten discoveries unique to that variant and one unique to the default. Nine of its 14 first discoveries occur after a restart, including seven during the first restart design. Both slow-contraction variants record zero restarts and four discoveries at \(c=30\). These patterns support a role for renewed global sampling. The interventions also modify proposals before the first restart, which limits attribution to restarts alone.
